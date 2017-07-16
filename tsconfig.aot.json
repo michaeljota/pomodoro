@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.webpack.json",
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/**/*.spec.ts",
+    "src/**/*.e2e-spec.ts"
+  ],
+  "include": [
+    "./src/main.browser.aot.ts"
+  ],
+  "angularCompilerOptions": {
+    "genDir": "./compiled",
+    "skipMetadataEmit": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rulesDirectory": [
+    "tslint-consistent-codestyle"
+  ],
+  "rules": {
+    "early-exit": [
+      true,
+      {
+        "max-length": 0
+      }
+    ],
+    "no-unnecessary-else": true,
+    "no-return-undefined": true,
+    "no-static-this": true,
+    "object-shorthand-properties-first": true,
+    "parameter-properties": [
+      true,
+      "leading",
+      "member-access",
+      "readonly"
+    ]
+  }
+}

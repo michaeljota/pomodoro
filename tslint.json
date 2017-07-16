@@ -1,0 +1,82 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "./config/tslint/codelyzer",
+    "./config/tslint/tslint-consistent-codestyle",
+    "./config/tslint/tslint-immutable"
+  ],
+  "rules": {
+    // Custom
+    "interface-name": [
+      false,
+      "always-prefix"
+    ],
+    "max-line-length": [
+      true,
+      80
+    ],
+    // General
+    "max-file-line-count": [
+      true,
+      300
+    ],
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "static-field",
+          "static-method",
+          "instance-field",
+          "constructor",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
+        ]
+      }
+    ],
+    "newline-before-return": true,
+    "no-console": [
+      true
+    ],
+    "no-default-export": true,
+    "no-import-side-effect": [
+      true,
+      {
+        "ignore-module": "(\\.html|\\.s?css|tslib)$"
+      }
+    ],
+    "no-string-literal": false,
+    "no-switch-case-fall-through": true,
+    "no-this-assignment": true,
+    "prefer-conditional-expression": true,
+    "prefer-object-spread": true,
+    "switch-default": true,
+    "typedef": [
+      true,
+      "call-signature",
+      "arrow-call-signature",
+      "parameter",
+      "arrow-parameter",
+      "property-declaration",
+      "member-variable-declaration"
+    ],
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "lowercase-last"
+      }
+    ],
+    "quotemark": [
+      true,
+      "single",
+      "avoid-escape"
+    ],
+    "variable-name": [
+      true,
+      "allow-leading-underscore",
+      "allow-pascal-case",
+      "ban-keywords",
+      "check-format"
+    ]
+  }
+}

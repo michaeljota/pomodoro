@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "tslint-immutable"
+  ],
+  "rules": {
+    "readonly-keyword": true,
+    "readonly-array": true,
+    "no-let": true
+  }
+}

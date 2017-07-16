@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <meta name="description" content="<%= htmlWebpackPlugin.options.description %>">
+  <!-- base url -->
+  <base href="<%= htmlWebpackPlugin.options.baseUrl %>">
+  <!-- Configured Head Tags  -->
+  <% if (htmlWebpackPlugin.options.headTags) { %>
+  <%= htmlWebpackPlugin.options.headTags %>
+  <% } %>
+
+  <%= htmlWebpackPlugin.files.webpackManifest %>
+
+  <% if (htmlWebpackPlugin.options.isDevServer && htmlWebpackPlugin.options.HMR !== true) { %>
+  <!-- Webpack Dev Server reload -->
+  <script src="/webpack-dev-server.js"></script>
+  <% } %>
+
+  <!-- Async Google Analytics. Set googleAnalytics object in HTML_CONFIG. -->
+  <% if (htmlWebpackPlugin.options.googleAnalytics && htmlWebpackPlugin.options.googleAnalytics.trackingId) { %>
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', '<%= htmlWebpackPlugin.options.googleAnalytics.trackingId %>', 'auto');
+    <% if (htmlWebpackPlugin.options.googleAnalytics.pageViewOnLoad) { %>
+    ga('send','pageview');
+    <% } %>
+  </script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <% } %>
+  <!-- End Google Analytics -->
+
+  <!-- CSS will be injected by webpack here -->
+  <!-- Preload link tags will be injected by webpack here -->
+
+</head>
+
+<body>
+
+  <pom-app>
+    Loading...
+  </pom-app>
+
+  <!-- Scripts will be injected by webpack here -->
+</body>
+</html>

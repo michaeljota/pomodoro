@@ -5,7 +5,7 @@
             "name": "Launch Chrome against localhost, with sourcemaps",
             "type": "chrome",
             "request": "launch",
-            "url": "http://localhost:3000/*",
+            "url": "http://localhost:3000/",
             "userDataDir": "${workspaceRoot}/.vscode/chrome",
             "runtimeArgs": [
               "--incognito",

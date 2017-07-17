@@ -7,7 +7,7 @@ import { CicleAction, CicleActions } from 'app/actions';
 export type CicleState = Cicle;
 
 export const CICLE_REDUCER: ActionReducer<CicleState> =
-  (state: CicleState, action: CicleAction): CicleState => {
+  (state: CicleState = Cicle.STOP, action: CicleAction): CicleState => {
     switch (action.type) {
       case CicleActions.SET: {
         return action.payload;

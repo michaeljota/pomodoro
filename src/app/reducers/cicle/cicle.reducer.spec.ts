@@ -65,7 +65,20 @@ describe('Cicle Reducer', () => {
     const resultedState: CicleState = CICLE_REDUCER(
       originalState,
       {
-        type: '[TEST]',
+        type: '[TEST] ANOTHER ACTION',
+      },
+    );
+
+    expect(resultedState).toEqual(expectedState);
+  });
+
+  it('should init the state to `STOP`', () => {
+    const originalState: CicleState = undefined as any;
+    const expectedState: CicleState = Cicle.STOP;
+    const resultedState: CicleState = CICLE_REDUCER(
+      originalState,
+      {
+        type: '[TEST] INIT STATE',
       },
     );
 

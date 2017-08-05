@@ -1,8 +1,8 @@
 export enum Cicle {
-  STOP,
-  PAUSE,
+  STOP = 'STOP',
+  PAUSE = 'PAUSE',
 
-  POMODORO,
-  SHORT_BREAK,
-  LONG_BREAK,
+  STARTED = 'STARTED',
+  SHORT_BREAK = 'SHORT BREAK',
+  LONG_BREAK = 'LONG BREAK',
 }

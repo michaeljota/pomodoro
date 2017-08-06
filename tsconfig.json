@@ -39,8 +39,7 @@
   },
   "exclude": [
     "node_modules",
-    "dist",
-    "./src/main.browser.aot.ts"
+    "dist"
   ],
   "compileOnSave": false,
   "buildOnSave": false,

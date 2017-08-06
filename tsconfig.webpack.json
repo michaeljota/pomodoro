@@ -19,7 +19,8 @@
     "./node_modules",
     "./dist",
     "./src/**/*.spec.ts",
-    "./src/**/*.e2e-spec.ts"
+    "./src/**/*.e2e-spec.ts",
+    "./src/main.browser.aot.ts"
   ],
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,

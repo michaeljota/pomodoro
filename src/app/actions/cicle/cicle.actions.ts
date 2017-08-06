@@ -8,7 +8,7 @@ export enum CicleActions {
 
 export class CicleDispacher {
   public start(): SetCicleAction {
-    return this.set(Cicle.POMODORO);
+    return this.set(Cicle.STARTED);
   }
 
   public stop(): SetCicleAction {

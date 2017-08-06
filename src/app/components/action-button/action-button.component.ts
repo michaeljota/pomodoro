@@ -61,7 +61,7 @@ export class ActionButtonComponent implements OnInit, OnDestroy {
       case Cicle.PAUSE:
         this._store.dispatch(new CicleDispacher().start());
         break;
-      case Cicle.POMODORO:
+      case Cicle.STARTED:
       default:
         this._store.dispatch(new CicleDispacher().pause());
     }
@@ -81,7 +81,7 @@ export class ActionButtonComponent implements OnInit, OnDestroy {
         this.text = 'START';
         break;
       }
-      case Cicle.POMODORO:
+      case Cicle.STARTED:
       default:
         this.text = 'PAUSE';
     }

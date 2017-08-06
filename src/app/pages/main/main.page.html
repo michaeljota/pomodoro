@@ -1,5 +1,33 @@
-<pom-timer>
-</pom-timer>
-
-<pom-action-button>
-</pom-action-button>
+<div fxLayout="column" fxLayoutAlign="center center">
+  <md-card>
+    <md-card-header>
+      <md-card-title>
+        <pom-title
+          [cicle]="state"
+        ></pom-title>
+      </md-card-title>
+      <md-card-subtitle>
+        <pom-counter
+          [pomodoros]="pomodoros"
+        >
+        </pom-counter>
+      </md-card-subtitle>
+    </md-card-header>
+    <md-card-content>
+      <pom-timer-progress
+        [cicle]="state"
+        [seconds]="seconds"
+        [fillerIncrement]="fillerIncrement"
+      >
+      </pom-timer-progress>
+    </md-card-content>
+    <md-card-actions>
+      <pom-start-button
+        [cicle]="state"
+        (onClick)="start($event)"
+      >
+      </pom-start-button>
+      <button md-button (click)="stopTimer()">STOP</button>
+    </md-card-actions>
+  </md-card>
+</div>

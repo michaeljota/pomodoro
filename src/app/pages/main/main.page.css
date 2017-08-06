@@ -1,0 +1,11 @@
+:host, div {
+  height: 100%;
+}
+
+md-card {
+  width: 300px;
+}
+
+md-card-header {
+  width: 100%;
+}

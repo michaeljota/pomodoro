@@ -70,7 +70,9 @@
     "prebuild:electron:dev": "npm run clean:dist",
     "watch:electron": "npm run watch:electron:dev",
     "watch:electron:dev": "npm run build:electron:dev -- --watch",
-    "watch:electron:prod": "npm run build:electron:prod -- --watch"
+    "watch:electron:prod": "npm run build:electron:prod -- --watch",
+    "electron-builder": "electron-builder",
+    "electron-builder:windows": "npm run electron-builder -- -w --project ./dist"
   },
   "dependencies": {
     "@angular/animations": "~4.3.0",

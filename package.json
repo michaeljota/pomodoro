@@ -60,7 +60,17 @@
     "webdriver:start": "npm run webdriver-manager start",
     "webdriver:update": "webdriver-manager update",
     "webpack-dev-server": "node --max_old_space_size=4096 node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "webpack": "node --max_old_space_size=4096 node_modules/webpack/bin/webpack.js"
+    "webpack": "node --max_old_space_size=4096 node_modules/webpack/bin/webpack.js",
+    "build:electron": "npm run build:electron:dev",
+    "build:electron:dev": "webpack --env.target=desktop",
+    "build:electron:prod": "npm run build:electron:dev -- --env.prod",
+    "electron": "electron",
+    "electron:start": "electron dist",
+    "postbuild:electron:dev": "npm run electron:start",
+    "prebuild:electron:dev": "npm run clean:dist",
+    "watch:electron": "npm run watch:electron:dev",
+    "watch:electron:dev": "npm run build:electron:dev -- --watch",
+    "watch:electron:prod": "npm run build:electron:prod -- --watch"
   },
   "dependencies": {
     "@angular/animations": "~4.3.0",

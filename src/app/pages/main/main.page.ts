@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs/Rx';
 
+import { LONG_BREAK, SHORT_BREAK, START } from 'app/constants';
 import { Cicle } from 'app/models';
+import { NotificationsService } from 'app/services';
 
 @Component({
   styleUrls: ['./main.page.css'],
@@ -14,6 +16,10 @@ export class MainPage implements OnInit {
   public fillerHeight: number;
   public pomodoros: number;
   public intervalSubscription: Subscription;
+
+  public constructor(
+    private readonly _notification: NotificationsService,
+  ) { }
 
   public ngOnInit(): void {
     this.resetApp();
@@ -63,14 +69,17 @@ export class MainPage implements OnInit {
 
   public startWork(): void {
     this.resetVariables(25 * 60, Cicle.STARTED);
+    this._notification.showNotification(START);
   }
 
   public startShortBreak(): void {
     this.resetVariables(5 * 60, Cicle.SHORT_BREAK);
+    this._notification.showNotification(SHORT_BREAK);
   }
 
   public startLongBreak(): void {
     this.resetVariables(15 * 60, Cicle.LONG_BREAK);
+    this._notification.showNotification(LONG_BREAK);
   }
 
   public stopTimer(): void {

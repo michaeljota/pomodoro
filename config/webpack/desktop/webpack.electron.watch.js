@@ -18,20 +18,39 @@ const electron = server.create({ path: appRoot.resolve('dist') });
 const { ProvidePlugin } = require('webpack');
 const WebpackOnBuildPlugin = require('on-build-webpack');
 
+/**
+ * Function to wait a given time.
+ *
+ * @param {number} [ms=0] The time to wait in miliseconds
+ * @returns A promise with a time out resolver.
+ */
+function sleep(ms = 0) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
 module.exports = (env) => {
-  let started = false;
+  let started = {
+    main: false,
+    renderer: false,
+  };
 
   return [
     // The Electron main thread configuration
     webpackMerge(mainThreadConfig(env), {
       plugins: [
-        new WebpackOnBuildPlugin(function (stats) {
-          if (!started) {
-            started = true;
-            electron.start();
-          } else {
+        new WebpackOnBuildPlugin(async (stats) => {
+          if (started.main) {
             electron.restart();
+            return;
           }
+
+          started.main = true;
+          // We need to wait until the renderer build has been completed in
+          // order to start the electron process.
+          while(!started.renderer) {
+            await sleep();
+          }
+          electron.start();
         }),
         new ProvidePlugin({
           livesyncClient: client,
@@ -41,10 +60,13 @@ module.exports = (env) => {
     // The Electron renderer thread configuration
     webpackMerge(rendererThreadConfig(env), {
       plugins: [
-        new WebpackOnBuildPlugin(function (stats) {
-          if (started) {
+        new WebpackOnBuildPlugin((stats) => {
+          if (started.renderer) {
             electron.reload();
+            return;
           }
+
+          started.renderer = true;
         }),
       ],
     }),

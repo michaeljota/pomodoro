@@ -1,13 +1,13 @@
 {
-  "name": "angular-barebone",
-  "version": "0.0.1",
-  "description": "A barebone Angular Webapp",
+  "name": "pomodoro",
+  "version": "0.0.1-alpha.1",
+  "description": "A Pomodoro Angular Webapp",
   "keywords": [
     "angular",
-    "barebone"
+    "pomodoro"
   ],
   "author": "Michael De Abreu",
-  "homepage": "https://github.com/michaeljota/angular-barebone",
+  "homepage": "https://github.com/michaeljota/pomodoro",
   "license": "MIT",
   "scripts": {
     "build:aot:prod": "npm run clean:dist && npm run clean:aot && cross-env BUILD_AOT=1 npm run webpack -- --progress --profile --bail",
@@ -177,10 +177,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/michaeljota/angular-barebone.git"
+    "url": "https://github.com/michaeljota/pomodoro.git"
   },
   "bugs": {
-    "url": "https://github.com/michaeljota/angular-barebone/issues"
+    "url": "https://github.com/michaeljota/pomodoro/issues"
   },
   "engines": {
     "node": ">= 6.9.0",

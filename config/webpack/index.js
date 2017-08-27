@@ -11,6 +11,8 @@
 module.exports = function(env) {
   env = env || {};
   switch (env.target) {
+    case 'desktop':
+      return require('./desktop')(env);
     case 'web':
     default:
       return require('./browser')(env);

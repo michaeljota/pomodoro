@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { PreloadAllModules, RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { MaterialModule } from './material.module';
@@ -45,6 +46,7 @@ import './../styles/theme.scss';
    */
   imports: [
     BrowserModule,
+    FlexLayoutModule,
     FormsModule,
     HttpModule,
     MaterialModule,
@@ -58,8 +60,9 @@ import './../styles/theme.scss';
    * Expose our Services and Providers into Angular's dependency injection.
    */
   providers: [
-    ENV_PROVIDERS,
+    ...ENV_PROVIDERS,
     ...SERVICES,
+    Title,
   ],
 })
 export class AppModule {

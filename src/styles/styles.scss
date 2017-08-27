@@ -8,3 +8,11 @@ html, body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   margin: 0;
 }
+
+body {
+  -webkit-app-region: drag;
+}
+
+button {
+  -webkit-app-region: no-drag;
+}

@@ -18,8 +18,8 @@ function isWebpackDevServer() {
 const HTML_OPTIONS = {
   template: appRoot.resolve('src/index.html'),
   chunksSortMode: 'dependency',
-  title: 'Your title',
-  description: 'Your description',
+  title: 'Pomodoro',
+  description: 'A Pomodoro app made with Electron, Angular, and ❤︎',
   baseUrl: '/',
   isDevServer: isWebpackDevServer(),
   headTags: getHtmlElementsString(HEAD_TAGS),
